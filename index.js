@@ -8,7 +8,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
   try {
     console.log("hello1");
     res.send("hello");
@@ -18,8 +18,8 @@ app.get("/home", (req, res) => {
   }
 });
 
-app.use("/users", userRouter);
-app.use("/flights", authenticate, flightRouter);
+// app.use("/users", userRouter);
+// app.use("/flights", authenticate, flightRouter);
 // app.use("/bookings", authenticate, bookingRouter);
 app.listen(6500, async () => {
   try {
