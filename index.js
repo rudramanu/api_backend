@@ -10,7 +10,6 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   try {
-    console.log("hello1");
     res.send("hello");
   } catch (error) {
     console.log("err", error);
@@ -18,8 +17,8 @@ app.get("/", (req, res) => {
   }
 });
 
-// app.use("/users", userRouter);
-// app.use("/flights", authenticate, flightRouter);
+app.use("/users", userRouter);
+app.use("/flights", authenticate, flightRouter);
 // app.use("/bookings", authenticate, bookingRouter);
 app.listen(6500, async () => {
   try {
