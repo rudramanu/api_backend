@@ -7,9 +7,14 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
+
 app.get("/home", (req, res) => {
-  console.log("hello1");
-  res.json("hello");
+  try {
+    console.log("hello1");
+    res.json("hello");
+  } catch (error) {
+    console.log("err", error);
+  }
 });
 
 app.use("/users", userRouter);
