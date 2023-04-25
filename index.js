@@ -11,9 +11,10 @@ app.use(express.json());
 app.get("/home", (req, res) => {
   try {
     console.log("hello1");
-    res.json("hello");
+    res.send("hello");
   } catch (error) {
     console.log("err", error);
+    res.send("not getting");
   }
 });
 
