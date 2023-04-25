@@ -7,7 +7,7 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
   console.log("hello1");
   res.json("hello");
 });
